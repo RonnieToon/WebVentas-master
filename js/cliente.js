@@ -335,7 +335,7 @@ function mostrarCarrusel(juegos, containerId) {
                                 ${juegos[i].descripcion}
                                 <span class="credit">${juegos[i].titulo}</span>
                                 <p class="price">${juegos[i].precio}</p>
-                                <button class="btn btn-primary btn-modal" data-toggle="modal" data-target="#gameModal1">Comprar</button>
+                                <button class="btn btn-primary btn-modal" data-toggle="modal" id="boton-carrusel" data-target="#gameModal1">Comprar</button>
                             </figcaption>
                         </figure>
                     </li>
@@ -349,7 +349,7 @@ function mostrarCarrusel(juegos, containerId) {
     for (var i = 0; i < juegos.length; i++) {
         carruselHTML += `
                     <li>
-                        <label for="slide-${i + 1}"><img src="${juegos[i].img}" alt="${juegos[i].titulo}"></label>
+                        <label for="slide-${i + 1}"><img class="img" src="${juegos[i].img}" alt="${juegos[i].titulo}"></label>
                     </li>
                     `;
     }

@@ -166,6 +166,9 @@ nav a:hover {
 
 .icon{
   margin-left: 100px;
+  display: flex;
+  flex-direction: row;
+  margin-left: -30px;
 }
 
 .ico {
@@ -584,7 +587,13 @@ section {
     margin-left:5px;
   }
 }
-
+.navbar-toggler{
+  background-color: #fff;
+}
+.navbar-toggler:hover{
+  box-shadow: 0 4px 6px rgba(255, 255, 0, 0.3);
+  border:2px solid black;
+}
 .bg-light {
   --bs-bg-opacity: 0;
   background-color: rgba(var(--bs-light-rgb),var(--bs-bg-opacity))!important;
@@ -690,4 +699,205 @@ section {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+}
+
+@media(max-width: 768px){
+  img {
+    display: block;
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    margin-left: 5px;
+  }
+  .imagencarrusel {
+    margin-left: 120px;
+    margin-bottom: -20px;
+    width: 50%;
+    height: 50%;
+}
+.container-carrusel {
+  width: 90%;
+  margin-left: 40px;
+}
+.ninots {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  margin-left: 70px;
+}
+#header {
+  padding-top: 3px; /* Ajusta el espacio superior según tus preferencias */
+  padding-bottom: 3px; /* Ajusta el espacio inferior según tus preferencias */
+}
+
+#logo img {
+  max-width: 30%; /* Ajusta el ancho del logo según tus preferencias */
+  height: auto; /* Hace que la altura del logo se ajuste automáticamente */
+}
+
+#navegador {
+  padding: 3px; 
+  margin:0;
+}
+
+#navbarNav {
+  font-size: 10px;
+  margin-left:-50px; /* Ajusta el tamaño de la fuente del menú según tus preferencias */
+}
+.listillo{
+  margin-left:50px;
+}
+#boton-carrusel{
+  margin-left: 250px;
+}
+.icon{
+  margin:0;
+}
+.dropdown-menu{
+  margin-left:-90px;
+  
+}
+.dropdown-menu a{
+  width: 150px;
+}
+.pie {
+  flex-direction: row;
+}
+footer {
+  height: auto;
+}
+
+.pie {
+  flex-direction: column;
+  align-items: center;
+}
+
+.foot1,
+.foot2 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Ajusta el tamaño del texto y otros elementos según sea necesario */
+h4,
+ul,
+li,
+img {
+  font-size: 14px; /* Ajusta según tus preferencias */
+}
+.contacto img{
+  width: 20px;
+  height: 20px;
+  display: flex;
+  display: inline;
+}
+}
+
+/* Estilos específicos para pantallas pequeñas (< 390px) */
+@media (max-width: 400px) {
+  #header {
+      padding-top: 5px; /* Ajusta el espacio superior según tus preferencias */
+      padding-bottom: 5px; /* Ajusta el espacio inferior según tus preferencias */
+  }
+
+  #logo img {
+      max-width: 50%; /* Ajusta el ancho del logo según tus preferencias */
+  }
+
+  #navbarNav {
+      font-size: 12px; /* Ajusta el tamaño de la fuente del menú según tus preferencias */
+      margin-left: 0; /* Ajusta el espacio a la izquierda del menú según tus preferencias */
+  }
+
+  .icon {
+      margin-right: 10px; /* Ajusta el espacio entre los íconos según tus preferencias */
+  }
+  .foot1,
+.foot2 {
+  width: 100%;
+  text-align: center;
+}
+.ninots{
+  display:none;
+}
+.container-carrusel {
+  width: 90%;
+  margin-left: 20px;
+}
+.container{
+  margin-left:-15px;
+}
+
+#logo img {
+  max-width: 30%; 
+  margin-left: 120px; 
+}
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: -30px;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 5px; /* Ajusta el espacio entre los elementos según tus preferencias */
+}
+#navbarNav {
+  font-size: 12px; /* Ajusta el tamaño de la fuente del menú según tus preferencias en pantallas de 400px */
+}
+
+.navbar-nav .nav-item.dropdown {
+  position: static; /* Evitar que los elementos desplegables se colapsen en pantallas pequeñas */
+}
+
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Hacer que el menú desplegable aparezca al pasar el ratón sobre el elemento en pantallas pequeñas */
+}
+.listillo{
+  margin-left: -5px;
+}
+.img {
+  display: block;
+  width:25px;
+  height: 25px;
+  object-fit: cover;
+  margin-left: -5px;
+}
+.imagencarrusel {
+  margin-left: 50px;
+  margin-bottom: -20px;
+  width:80%;
+  height: 80%;
+}
+.container-carrusel {
+width: 90%;
+margin-left: 20px;
+}
+#boton-carrusel{
+  margin-left: 100px;
+}
+.fotofoods{
+  display:none;
+}
+.search-bar {
+  flex-direction: column; /* Cambia a dirección de columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+.search-bar form,
+.search-bar div {
+  margin-top: 10px; /* Ajusta el margen según tus preferencias */
+}
+#header {
+  height: 20vh; /* Ajusta el tamaño del header según tus preferencias */
+}
+.search-bar{
+  margin-left: -90px;
+}
+.icon{
+  margin-left: -80px;
+}
 }

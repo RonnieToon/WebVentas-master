@@ -14,10 +14,10 @@
 
 <body>
     <header class="container" id="header">
-        <div id="logo" class="text-center col-3">
+        <div id="logo" class="text-center col-md-3 col-12">
             <a href="home.html"><img src="./img/logg.png" alt="logo" class="img-fluid"></a>
-        </div>        
-        <nav id="navegador" class="navbar navbar-expand-lg navbar-light bg-light">
+        </div>                
+        <nav id="navegador" class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -48,59 +48,57 @@
                             </ul>
                         </li>
                     </ul>
-                    <li class="search-bar d-flex ml-auto">
-                        <form action="#" method="GET">
-                            <input type="text" name="search" placeholder="Buscar">
-                            <button class="dropdown-item text-center" id="btnBuscar" type="submit" data-categoria="lupa">Buscar</button>
-                        </form>
-                    </li>
-                    <div class="">    
-                    <ul class="navbar-nav icon">
-                        <li class="nav-item dropdown" id="ic">
-                            <a class="nav-link dropdown-toggle" href="#" id="sesionLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="ico " src="./img/star.png" alt="Icono mago">
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="sesionLink">
-                                <li><a class="dropdown-item text-center" href="#" data-categoria="iniciarsesion" style="font-family: 'AlfaSlabOne';">Iniciar Sesión</a></li>
-                                <li><a class="dropdown-item text-center" href="#" data-categoria="nuevousuario" style="font-family: 'AlfaSlabOne';">Registrarse</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="carritoLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img class="ico2" id="ver-carrito" src="./img/kar.png" alt="Icono Carrito">
-                            </a>
-                        </li>
-                    </ul>
-                    </div>
                 </div>
             </div>
         </nav>
+        <!-- Input, botón, e iconos fuera del collapse -->
+        <div class="search-bar d-flex ml-auto">
+            <form action="#" method="GET">
+                <input type="text" name="search" placeholder="Buscar">
+                <button class="dropdown-item text-center" id="btnBuscar" type="submit" data-categoria="lupa">Buscar</button>
+            </form>
+        </div>
+        <div class="">
+            <ul class="navbar-nav icon">
+                <li class="nav-item dropdown" id="ic">
+                    <a class="nav-link dropdown-toggle" href="#" id="sesionLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="ico " src="./img/star.png" alt="Icono mago">
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="sesionLink">
+                        <li><a class="dropdown-item text-center" href="#" data-categoria="iniciarsesion" style="font-family: 'AlfaSlabOne';">Iniciar Sesión</a></li>
+                        <li><a class="dropdown-item text-center" href="#" data-categoria="nuevousuario" style="font-family: 'AlfaSlabOne';">Registrarse</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="carritoLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img class="ico2" id="ver-carrito" src="./img/cesta.png" alt="Icono Carrito">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </header>
-<!-- Agregar este modal al final de tu archivo HTML -->
-<div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body" id="carritoModalBody">
-                <!-- Aquí se mostrarán los productos del carrito -->
-            </div>
-            <div class="totalcompra">
-                <h4 style="font-family: 'AlfaSlabOne'; margin-left:250px;margin-top:20px;">Total: </h4>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" id="comprarBtn">Comprar</button>
+    <div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="carritoModalBody">
+                    <!-- Aquí se mostrarán los productos del carrito -->
+                </div>
+                <div class="totalcompra">
+                    <h4 style="font-family: 'AlfaSlabOne'; margin-left:250px;margin-top:20px;">Total: </h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" id="comprarBtn">Comprar</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-
     <div class="container-carrusel">
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -324,7 +322,7 @@
     </div>
 </div>
 
-</body> 
+</body>
 <footer class="text-center">
         <div class="pie row">
             <div class="foot1 col-md-6 col-sm-6 col-6 text-center">
@@ -340,8 +338,8 @@
                     <li>Cádiz</li>
                 </ul>
                </div>
-               <div>
-                <img src="./img/im.jpg" alt="imagen marca">
+               <div class="fotofoods">
+                <img id="fotofoot" src="./img/im.jpg" alt="imagen marca">
                </div> 
             </div>
             <div class="foot2 col-md-6 col-sm-6 col-6 text-center">
