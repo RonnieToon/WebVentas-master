@@ -701,98 +701,170 @@ section {
   margin-bottom: 20px;
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
   img {
     display: block;
     width: 80%;
-    height: 80%;
+    height: auto; /* Cambiado a 'auto' para mantener la proporción */
     object-fit: cover;
     margin-left: 5px;
   }
+
   .imagencarrusel {
-    margin-left: 120px;
-    margin-bottom: -20px;
-    width: 50%;
-    height: 50%;
-}
-.container-carrusel {
-  width: 90%;
-  margin-left: 40px;
-}
-.ninots {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
-  margin-left: 70px;
-}
-#header {
-  padding-top: 3px; /* Ajusta el espacio superior según tus preferencias */
-  padding-bottom: 3px; /* Ajusta el espacio inferior según tus preferencias */
-}
+    margin-left: 0; /* Ajustado el margen izquierdo */
+    margin-bottom: 0; /* Ajustado el margen inferior */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    height: auto; /* Cambiado a 'auto' para mantener la proporción */
+  }
 
-#logo img {
-  max-width: 30%; /* Ajusta el ancho del logo según tus preferencias */
-  height: auto; /* Hace que la altura del logo se ajuste automáticamente */
-}
+  .container-carrusel {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
 
-#navegador {
-  padding: 3px; 
-  margin:0;
-}
+  .ninots {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-bottom: 10px;
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
 
-#navbarNav {
-  font-size: 10px;
-  margin-left:-50px; /* Ajusta el tamaño de la fuente del menú según tus preferencias */
-}
-.listillo{
-  margin-left:50px;
-}
-#boton-carrusel{
-  margin-left: 250px;
-}
-.icon{
-  margin:0;
-}
-.dropdown-menu{
-  margin-left:-90px;
+  #header {
+    padding-top: 3px; /* Ajusta el espacio superior según tus preferencias */
+    padding-bottom: 3px; /* Ajusta el espacio inferior según tus preferencias */
+  }
+
+  #logo img {
+    max-width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto; /* Hace que la altura del logo se ajuste automáticamente */
+  }
+
+  #navbarNav {
+    font-size: 10px;
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
+
+  .listillo {
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
+
+  #boton-carrusel {
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
+
+  .icon {
+    margin: 0;
+  }
+
+  .dropdown-menu {
+    margin-left: 0; /* Ajustado el margen izquierdo */
+  }
+
+  .dropdown-menu a {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+  }
+
+  .pie {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot1,
+  .foot2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  h4,
+  ul,
+  li,
+  img {
+    font-size: 14px;
+  }
+
+  .contacto img {
+    width: 20px;
+    height: 20px;
+    display: inline; /* Agregado 'display: inline' */
+  }
+  .container-fluid{
+    margin-left:-20px;
+  }
+  #logo img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  .search-bar {
+    margin-left: 10px;
+  }
+
+  .icon {
+    margin-right: 5px;
+  }
+
+  #navbarNav {
+    font-size: 10px;
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin-right: 0;
+    margin-bottom: 5px; /* Ajusta el espacio entre los elementos del menú según tus preferencias */
+  }
+
+  .dropdown-menu {
+    margin-left: 0;
+  }
+
+  .dropdown-menu a {
+    width: 100%;
+  }
+
+  #boton-carrusel {
+    margin-left: 10px;
+  }
+
+  .pie {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foot1,
+  .foot2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  h4,
+  ul,
+  li,
+  img {
+    font-size: 8px;
+  }
+  .icon{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .contacto img {
+    width: 15px;
+    height: 15px;
+    display: inline;
+  }
+  .container-fluid{
+    margin-left:-70px;
+  }
   
 }
-.dropdown-menu a{
-  width: 150px;
-}
-.pie {
-  flex-direction: row;
-}
-footer {
-  height: auto;
-}
 
-.pie {
-  flex-direction: column;
-  align-items: center;
-}
-
-.foot1,
-.foot2 {
-  width: 100%;
-  text-align: center;
-}
-
-/* Ajusta el tamaño del texto y otros elementos según sea necesario */
-h4,
-ul,
-li,
-img {
-  font-size: 14px; /* Ajusta según tus preferencias */
-}
-.contacto img{
-  width: 20px;
-  height: 20px;
-  display: flex;
-  display: inline;
-}
-}
 
 /* Estilos específicos para pantallas pequeñas (< 390px) */
 @media (max-width: 400px) {
@@ -802,29 +874,32 @@ img {
   }
 
   #logo img {
-      max-width: 50%; /* Ajusta el ancho del logo según tus preferencias */
+    max-width: 20%;
+    display:none; /* Ajusta el ancho del logo según tus preferencias */
   }
 
   #navbarNav {
-      font-size: 12px; /* Ajusta el tamaño de la fuente del menú según tus preferencias */
-      margin-left: 0; /* Ajusta el espacio a la izquierda del menú según tus preferencias */
+    font-size: 12px; /* Ajusta el tamaño de la fuente del menú según tus preferencias */
+    margin-left: 0;
+    padding-left: 0;
   }
 
   .icon {
-      margin-right: 10px; /* Ajusta el espacio entre los íconos según tus preferencias */
+    align-items: center;
+    margin-left:-70px; /* Ajusta el espacio entre los íconos según tus preferencias */
   }
   .foot1,
-.foot2 {
-  width: 100%;
-  text-align: center;
-}
-.ninots{
-  display:none;
-}
-.container-carrusel {
-  width: 90%;
-  margin-left: 20px;
-}
+  .foot2 {
+    width: 100%;
+    text-align: center;
+  }
+  .ninots{
+    display:none;
+  }
+  .container-carrusel {
+    width: 90%;
+    margin-left: 20px;
+  }
 .container{
   margin-left:-15px;
 }
@@ -838,7 +913,7 @@ img {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-left: -30px;
+  margin-left: -40px;
 }
 
 .navbar-nav .nav-item {
@@ -900,4 +975,5 @@ margin-left: 20px;
 .icon{
   margin-left: -80px;
 }
+
 }
