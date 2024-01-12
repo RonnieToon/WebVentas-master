@@ -559,6 +559,21 @@ section {
     overflow-y: scroll;
   }
 }
+.redes:hover{
+  transform: scale(1.1);
+}
+.face:hover{
+  background-color: blue;
+} 
+.twi:hover{
+  background-color: rgb(68, 137, 215);
+} 
+.you:hover{
+  background-color: red;
+} 
+.ins:hover{
+  background-color: violet;
+}
 
 .carousel__thumbnails {
   list-style: none;
