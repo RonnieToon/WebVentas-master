@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.3.2-dist/css/bootstrap.min.css">
+    <link rel="icon" href="./img/star.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script src="./jQuery/jquery-3.7.1.min.js"></script>
+    <script src="./bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/cliente.js"></script>
+    <title>Board Game Store</title>
+</head>
+
+<body>
+    <header class="container" id="header">
+        <div id="logo" class="text-center col-3">
+            <a href="home.html"><img src="./img/logg.png" alt="logo" class="img-fluid"></a>
+        </div>        
+        <nav id="navegador" class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="juegosLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'AlfaSlabOne';">JUEGOS</a>
+                            <ul class="dropdown-menu" aria-labelledby="juegosLink">
+                                <a class="dropdown-item text-center" href="#" data-target="cartaContainer" data-categoria="carta" style="font-family: 'AlfaSlabOne';">Cartas</a>
+                                <a class="dropdown-item text-center" href="#" data-target="mesaContainer" data-categoria="mesa" style="font-family: 'AlfaSlabOne';">Tablero</a>
+                                <a class="dropdown-item text-center" href="#" data-target="rolContainer" data-categoria="rol" style="font-family: 'AlfaSlabOne';">Rol</a>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="accesoriosLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'AlfaSlabOne';">ACCESORIOS</a>
+                            <ul class="dropdown-menu" aria-labelledby="accesoriosLink">
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="tapetes" style="font-family: 'AlfaSlabOne';">Tapetes</a></li>
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="fundas" style="font-family: 'AlfaSlabOne';">Fundas</a></li>
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="dados" style="font-family: 'AlfaSlabOne';">Dados</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="outletLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-family: 'AlfaSlabOne';">OUTLET</a>
+                            <ul class="dropdown-menu" aria-labelledby="outletLink">
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="rebajados" style="font-family: 'AlfaSlabOne';">Descuentos</a></li>
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="existencias" style="font-family: 'AlfaSlabOne';">Existencias</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li class="search-bar d-flex ml-auto">
+                        <form action="#" method="GET">
+                            <input type="text" name="search" placeholder="Buscar">
+                            <button class="dropdown-item text-center" id="btnBuscar" type="submit" data-categoria="lupa">Buscar</button>
+                        </form>
+                    </li>
+                    <div class="">    
+                    <ul class="navbar-nav icon">
+                        <li class="nav-item dropdown" id="ic">
+                            <a class="nav-link dropdown-toggle" href="#" id="sesionLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="ico " src="./img/star.png" alt="Icono mago">
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="sesionLink">
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="iniciarsesion" style="font-family: 'AlfaSlabOne';">Iniciar Sesión</a></li>
+                                <li><a class="dropdown-item text-center" href="#" data-categoria="nuevousuario" style="font-family: 'AlfaSlabOne';">Registrarse</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="carritoLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="ico2" id="ver-carrito" src="./img/kar.png" alt="Icono Carrito">
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- Agregar este modal al final de tu archivo HTML -->
+<div class="modal fade" id="carritoModal" tabindex="-1" role="dialog" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="carritoModalLabel">Carrito de Compras</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="carritoModalBody">
+                <!-- Aquí se mostrarán los productos del carrito -->
+            </div>
+            <div class="totalcompra">
+                <h4 style="font-family: 'AlfaSlabOne'; margin-left:250px;margin-top:20px;">Total: </h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="comprarBtn">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container-carrusel">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./img/asmodee.jpg" class="d-block w-100" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/devir.jpg" class="d-block w-100" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img src="./img/mercurio.jpg" class="d-block w-100" alt="Third slide">
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="ninots text-center">
+        <div class="ninot1">
+            <img src="./img/nino2.png" alt="Lo mas nuevo">
+        </div>
+        <div class="ninot2">
+            <img src="./img/nino1.png" alt="Recomendados">
+        </div>
+    </div>
+    <div class="container" id="superventasContainer">
+        <div id="main-container">
+            <div class="row" id="gamesContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';"> SuperVentas</h2>
+                        <img src="./img/ventas.png">
+                    </div>
+                </div>
+                <!-- Contenido de lo más vendido -->
+            </div>
+        </div>
+    </div>
+    <div class="listillo text-center" >
+        <img src="./img/image.png" alt=" listillo juego">
+    </div>
+    <div class="container"id="novoContainer">
+        <div class="dif" id="main-container">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Novedades</h2>
+                    <img src="./img/nuevos.png">
+                </div>
+            </div>
+            <div class="row" id="gamesnovContainer">
+                <!-- Contenido de novedades -->
+            </div>
+        </div>
+    </div>
+    <div class="listillo text-center">
+        <img src="./img/amiguillos.png" alt=" amiguillos juego">
+    </div>
+    <div class="container" id="rebajaContainer">
+        <div id="main-container">
+            <div class="row" id="gamesoutContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Rebajas</h2>
+                        <img src="./img/cupon.png" alt="descuentoimagen">
+                </div>
+                </div>
+                <!-- Contenido con descuento -->
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor de juegos de cartas -->
+    <div class="container" id="carta">
+        <div class="main-containercarta">
+            <div class="row" id="cartaContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Cartas</h2>
+                        <img src="./img/cartas.png" alt="descuentoimagen">
+                </div>
+                </div>
+                <!-- Contenido con descuento -->
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor de juegos de mesa -->
+    <div class="container" id="mesa">
+        <div class="main-containermesa">
+            <div class="row" id="mesaContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Juegos Tablero</h2>
+                        <img src="./img/mesa.png" alt="descuentoimagen">
+                </div>
+                </div>
+                <!-- Contenido con Tablero -->
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor de juegos de rol -->
+    <div class="container" id="rol">
+        <div class="main-containerrol">
+            <div class="row" id="rolContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Juegos Rol</h2>
+                        <img src="./img/rol.png" alt="descuentoimagen">
+                </div>
+                </div>
+                <!-- Contenido con Rol -->
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor de juegos rebajados -->
+    <div class="container" id="ribaja">
+        <div class="main-containerrebajados">
+            <div class="row" id="rebajadosContainer">
+                <div class="subtitulo text-center">
+                    <div class="new">
+                        <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Juegos Rebajados</h2>
+                        <img src="./img/salida.png" alt="descuentoimagen">
+                </div>
+                </div>
+                <!-- Contenido con descuento -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contenedor de juegos existencias -->
+<div class="container" id="existencias">
+    <div class="main-containerexistencias">
+        <div class="row" id="existenciasContainer">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Juegos Últimas Existencias</h2>
+                    <img src="./img/ofer.png" alt="descuentoimagen">
+            </div>
+            </div>
+            <!-- Contenido con descuento -->
+        </div>
+    </div>
+</div>
+<!-- Contenedor de juegos tapetes -->
+<div class="container" id="tapetes">
+    <div class="main-containertapetes">
+        <div class="row" id="tapetesContainer">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Tapetes</h2>
+                    <img src="./img/tapete.png" alt="descuentoimagen">
+            </div>
+            </div>
+            <!-- Contenido con descuento -->
+        </div>
+    </div>
+</div>
+<!-- Contenedor de juegos fundas -->
+<div class="container" id="fundas">
+    <div class="main-containerfundas">
+        <div class="row" id="fundasContainer">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Fundas</h2>
+                    <img src="./img/funda.png" alt="descuentoimagen">
+            </div>
+            </div>
+            <!-- Contenido con descuento -->
+        </div>
+    </div>
+</div>
+<!-- Contenedor de juegos dados -->
+<div class="container" id="dados">
+    <div class="main-containerdados">
+        <div class="row" id="dadosContainer">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Dados</h2>
+                    <img src="./img/dado.png" alt="descuentoimagen">
+            </div>
+            </div>
+            <!-- Contenido con descuento -->
+        </div>
+    </div>
+</div>
+<!-- Contenedor de juegos busqueda -->
+<div class="container" id="lupa">
+    <div class="main-containerlupa">
+        <div class="row" id="lupaContainer">
+            <div class="subtitulo text-center">
+                <div class="new">
+                    <h2 class="masvendidos" style="font-family: 'AlfaSlabOne';">Resultado de la Búsqueda</h2>
+                    <img src="./img/lupa.png" alt="descuentoimagen">
+            </div>
+            </div>
+            <!-- Contenido con descuento -->
+        </div>
+    </div>
+</div>
+<!-- Nuevo Modal para + Info -->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="infoModalLabel">Información del Artículo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="" alt="Imagen del artículo" id="infoModalImage" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                        <h3 id="infoModalTitle"></h3>
+                        <p id="infoModalDescription"></p>
+                        <p class="price" id="infoModalPrice"></p>
+                        <button class="btn btn-primary btn-modals" id="infoModalBuyBtn">Comprar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body> 
+<footer class="text-center">
+        <div class="pie row">
+            <div class="foot1 col-md-6 col-sm-6 col-6 text-center">
+                <div>
+                <h4 style="font-family: 'AlfaSlabOne';">Visita Nuestras Tiendas</h4>
+                <ul>
+                    <li>Barcelona</li>
+                    <li>Sevilla</li>
+                    <li>Madrid</li>
+                    <li>Málaga</li>
+                    <li>Valencia</li>
+                    <li>Zaragoza</li>
+                    <li>Cádiz</li>
+                </ul>
+               </div>
+               <div>
+                <img src="./img/im.jpg" alt="imagen marca">
+               </div> 
+            </div>
+            <div class="foot2 col-md-6 col-sm-6 col-6 text-center">
+                <div>
+                <h4 style="font-family: 'AlfaSlabOne';">Acerca de Board Game Store</h4>
+                <ul>
+                    <li>Quiénes somos</li>
+                    <li>Gastos de envío</li>
+                    <li>Devoluciones</li>
+                    <li>Preguntas Frecuentes</li>
+                </ul>
+                </div>
+                <div class="contacto">
+                <h4 style="font-family: 'AlfaSlabOne';">Contactanos</h4>
+                <img src="./img/facebook.png" alt="icono facebook">
+                <img src="./img/twiter.png" alt="icono twiter">
+                <img src="./img/instagram.png" alt="icono instagram">
+                <img src="./img/youtube.png" alt="icono youtube">
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>
